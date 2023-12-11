@@ -663,77 +663,66 @@
       key = "<leader>w-";
       action = "<C-W>s";
       options.desc = "Split window below";
-      remap = true;
     }
     {
       mode = "n";
       key = "<leader>w|";
       action = "<C-W>v";
       options.desc = "Split window right";
-      remap = true;
     }
     {
       mode = "n";
       key = "<leader>w-";
       action = "<C-W>s";
       options.desc = "Split window below";
-      remap = true;
     }
     {
       mode = "n";
       key = "<leader>|";
       action = "<C-W>v";
       options.desc = "Split window right";
-      remap = true;
     }
     {
       mode = "n";
       key = "<leader>-";
       action = "<C-W>s";
       options.desc = "Split window below";
-      remap = true;
     }
     {
       mode = "n";
       key = "<leader><tab>l";
       action = "<cmd>tablast<cr>";
       options.desc = "Last Tab";
-      remap = true;
     }
     {
       mode = "n";
       key = "<leader><tab>f";
       action = "<cmd>tabfirst<cr>";
       options.desc = "First Tab";
-      remap = true;
     }
     {
       mode = "n";
       key = "<leader><tab><tab>";
       action = "<cmd>tabnew<cr>";
       options.desc = "New Tab";
-      remap = true;
     }
     {
       mode = "n";
       key = "<leader><tab>]";
       action = "<cmd>tabnext<cr>";
       options.desc = "Next Tab";
-      remap = true;
     }
     {
       mode = "n";
       key = "<leader><tab>d";
       action = "<cmd>tablast<cr>";
       options.desc = "Close Tab";
-      remap = true;
     }
     {
       mode = "n";
       key = "<leader><tab>[";
       action = "<cmd>tablast<cr>";
       options.desc = "Previous Tab";
-      remap = true;
     }
   ];
 }
