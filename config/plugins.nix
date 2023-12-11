@@ -20,17 +20,77 @@
 
     telescope = {
       enable = true;
+      # defaults.mappings = {
+      #   i = { "[<c-t>]" = ''require("trouble.providers.telescope").open_with_trouble''; };
+      #   v = { "[<c-t>]" = ''require("trouble.providers.telescope").open_with_trouble''; };
+      # };
+      extensions.fzf-native.enable = true;
+      extensions.frecency.enable = true;
       keymaps = {
         "<leader>ff" = {
           action = "find_files";
           desc = "find files";
         };
+        "<leader><leader>" = {
+          action = "find_files";
+          desc = "find files";
+        };
+        "<leader>/" = {
+          action = "live_grep";
+          desc = "Telescope Git Files";
+        };
+        "<leader>:" = {
+          action = "command_history";
+          desc = "Command History";
+        };
         "<C-p>" = {
           action = "git_files";
           desc = "find files in git";
         };
+        "<leader>'" = {
+          action = "resume";
+          desc = "Resume Telescope";
+        };
+        "<leader>," = {
+          action = "buffers";
+          desc = "Find Buffers";
+        };
+        # "<leader>fb" = {
+        #   action = "buffers sort_mru=true sort_lastused=true";
+        #   desc = "Find Buffers";
+        # };
+        "<leader>sd" = {
+          action = "diagnostics";
+          desc = "Diagnostics";
+        };
+        "<leader>sm" = {
+          action = "man_pages";
+          desc = "Search Manual";
+        };
+        "<leader>ss" = {
+          action = "lsp_document_symbols";
+          desc = "Symbols";
+        };
+        "<leader>sS" = {
+          action = "lsp_dynamic_workspace_symbols";
+          desc = "Workspace Symbols";
+        };
+        "<leader>sG" = {
+          action = "live_grep";
+          desc = "Grep";
+        };
+        "<leader>gr" = {
+          action = "lsp_references";
+          desc = "Goto references";
+        };
       };
-      extensions.fzf-native.enable = true;
+      # extraOptions = {
+      #   mappings = {
+      #     i = {
+      #       "<c-t>" = ''require("trouble.providers.telescope").open_with_trouble(...)'';
+      #     };
+      #   };
+      # };
     };
 
     lightline.enable = true;
@@ -38,10 +98,66 @@
 
     which-key.enable = true;
     dashboard.enable = true;
+    # alpha = {
+    #   enable = true;
+    #   iconsEnabled = true;
+    #   layout = [
+    #     {
+    #       type = "padding";
+    #       val = 2;
+    #     }
+    #     {
+    #       opts = {
+    #         hl = "Type";
+    #         position = "center";
+    #       };
+    #       type = "text";
+    #       val = [
+    #         "  ███╗   ██╗██╗██╗  ██╗██╗   ██╗██╗███╗   ███╗  "
+    #         "  ████╗  ██║██║╚██╗██╔╝██║   ██║██║████╗ ████║  "
+    #         "  ██╔██╗ ██║██║ ╚███╔╝ ██║   ██║██║██╔████╔██║  "
+    #         "  ██║╚██╗██║██║ ██╔██╗ ╚██╗ ██╔╝██║██║╚██╔╝██║  "
+    #         "  ██║ ╚████║██║██╔╝ ██╗ ╚████╔╝ ██║██║ ╚═╝ ██║  "
+    #         "  ╚═╝  ╚═══╝╚═╝╚═╝  ╚═╝  ╚═══╝  ╚═╝╚═╝     ╚═╝  "
+    #       ];
+    #     }
+    #     {
+    #       type = "padding";
+    #       val = 2;
+    #     }
+    #     {
+    #       type = "group";
+    #       val = [
+    #         {
+    #           command = "<CMD>ene <CR>";
+    #           desc = "  New file";
+    #           shortcut = "e";
+    #         }
+    #         {
+    #           command = ":qa<CR>";
+    #           desc = "  Quit Neovim";
+    #           shortcut = "SPC q";
+    #         }
+    #       ];
+    #     }
+    #     {
+    #       type = "padding";
+    #       val = 2;
+    #     }
+    #     {
+    #       opts = {
+    #         hl = "Keyword";
+    #         position = "center";
+    #       };
+    #       type = "text";
+    #       val = "Inspiring quote here.";
+    #     }
+    #   ];
+    # };
+
     gitsigns.enable = true;
     indent-blankline.enable = true;
     persistence.enable = true;
-
 
     treesitter = {
       enable = true;
@@ -140,17 +256,17 @@
     cmp-latex-symbols.enable = true;
 
     flash.enable = true;
-    harpoon = {
-      enable = true;
-      keymapsSilent = true;
-      enableTelescope = true;
-      keymaps = {
-        addFile = "<leader>a";
-        toggleQuickMenu = "<leader>h";
-        navNext = "]]";
-        navPrev = "[[";
-      };
-    };
+    # harpoon = {
+    #   enable = true;
+    #   keymapsSilent = true;
+    #   enableTelescope = true;
+    #   keymaps = {
+    #     addFile = "<leader>a";
+    #     toggleQuickMenu = "<leader>h";
+    #     navNext = "]]";
+    #     navPrev = "[[";
+    #   };
+    # };
 
     mini = {
       enable = true;
@@ -189,7 +305,8 @@
     notify = {
       enable = true;
       stages = "fade";
-      timeout = 3000;
+      timeout = 2000;
+      fps = 60;
       backgroundColour = "#000000";
     };
 

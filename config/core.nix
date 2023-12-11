@@ -5,25 +5,25 @@
         event = [ "FileType" ];
         pattern = [ "qf" ];
         command = "nmap <buffer> <CR> <CR>";
-        options.desc = "Restore enter in quickfix";
+        # options.desc = "Restore enter in quickfix";
       }
       {
         event = [ "FileType" ];
         pattern = [ "qf" ];
         command = "nmap <buffer><silent> q :ccl<CR>";
-        options.desc = "Quit quickfix with q";
+        # options.desc = "Quit quickfix with q";
       }
       {
         event = [ "FileType" ];
         pattern = [ "help" ];
         command = "nmap <buffer><silent> q :q<CR>";
-        options.desc = "Quit help with q";
+        # options.desc = "Quit help with q";
       }
       {
         event = [ "FileType" ];
         pattern = [ "markdown" ];
         command = "<cmd>set wrap<CR>";
-        options.desc = "Wrap markdown";
+        # options.desc = "Wrap markdown";
       }
     ];
 
@@ -39,6 +39,7 @@
       backup = false; # don't create backups
       hlsearch = false;
       incsearch = true;
+      wrap = false;
 
       shiftwidth = 2;
       tabstop = 4;
@@ -60,7 +61,6 @@
       signcolumn = "yes";
       cmdheight = 0;
       cot = [ "menu" "menuone" "noselect" ];
-      colorcolumn = "120";
 
       updatetime = 100;
       timeout = true;
@@ -73,16 +73,10 @@
     };
 
     extraPlugins = with pkgs.vimPlugins; [
-      tokyonight-nvim
-      gruvbox
-      nord-nvim
-      everforest
-      kanagawa-nvim
-      overseer-nvim
-      plenary-nvim
-      nvim-web-devicons
+      # overseer-nvim
+      # plenary-nvim
       nvim-spectre
-      dressing-nvim
+      # dressing-nvim
       friendly-snippets
       lazygit-nvim
     ];
@@ -91,15 +85,14 @@
       fd
       ripgrep
       lazygit
+      gnused
     ];
     extraConfigLuaPre = '' '';
-    extraConfigLua = ''
-      require("dressing").setup({})
-      require("nvim-web-devicons").setup({})
-    '';
-    colorschemes.catppuccin = {
+    # extraConfigLua = ''
+    #   require("dressing").setup({})
+    # '';
+    colorschemes.tokyonight = {
       enable = true;
-      flavour = "mocha";
     };
   };
 }
