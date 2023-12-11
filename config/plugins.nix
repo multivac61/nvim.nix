@@ -1,16 +1,27 @@
 { pkgs, ... }: {
-  extraPlugins = [ pkgs.vimPlugins.lazygit-nvim ];
   plugins = {
-
     undotree = {
       enable = true;
       focusOnToggle = true;
     };
 
+    nvim-autopairs = {
+      enable = true;
+      checkTs = true;
+    };
+
+    nvim-colorizer.enable = true;
+    illuminate.enable = true;
+    nix.enable = true;
+    todo-comments.enable = true;
+    lspkind.enable = true;
+    better-escape.enable = true;
+    project-nvim.enable = true;
+
     telescope = {
       enable = true;
       keymaps = {
-        "<leader>pf" = {
+        "<leader>ff" = {
           action = "find_files";
           desc = "find files";
         };
@@ -19,11 +30,18 @@
           desc = "find files in git";
         };
       };
+      extensions.fzf-native.enable = true;
     };
 
     lightline.enable = true;
+    lint.enable = true;
 
     which-key.enable = true;
+    dashboard.enable = true;
+    gitsigns.enable = true;
+    indent-blankline.enable = true;
+    persistence.enable = true;
+
 
     treesitter = {
       enable = true;
@@ -39,12 +57,30 @@
         "bash"
         "markdown"
         "markdown_inline"
+        "svelte"
+        "prisma"
+        "sql"
+        "typescript"
+        "tsx"
+        "regex"
+        "bash"
+        "rust"
+        "toml"
+        "kdl"
       ];
       indent = true;
       nixvimInjections = true;
     };
+    treesitter-context.enable = true;
+    treesitter-textobjects.enable = true;
+    ts-autotag.enable = true;
+    ts-context-commentstring.enable = true;
 
-    luasnip.enable = true;
+    # luasnip.enable = true;
+    luasnip = {
+      enable = true;
+      fromVscode = [{ paths = "${pkgs.vimPlugins.friendly-snippets}"; }];
+    };
 
     lsp = {
       enable = true;
@@ -58,7 +94,13 @@
         lua-ls.enable = true;
         tsserver.enable = true;
         texlab.enable = true;
+        clangd.enable = true;
       };
+    };
+
+    clangd-extensions = {
+      enable = true;
+      enableOffsetEncodingWorkaround = true;
     };
 
     lsp-format.enable = true;
@@ -81,18 +123,34 @@
       sources = [
         { name = "nvim_lsp"; }
         { name = "luasnip"; }
-        { name = "buffer"; }
+        {
+          name = "buffer";
+          # Words from other open buffers can also be suggested.
+          option.get_bufnrs.__raw = "vim.api.nvim_list_bufs";
+        }
         { name = "path"; }
       ];
     };
 
     cmp-nvim-lsp.enable = true;
     cmp-buffer.enable = true;
+    cmp-emoji.enable = true;
     cmp-path.enable = true;
     cmp_luasnip.enable = true;
     cmp-latex-symbols.enable = true;
 
-    ts-context-commentstring.enable = true;
+    flash.enable = true;
+    harpoon = {
+      enable = true;
+      keymapsSilent = true;
+      enableTelescope = true;
+      keymaps = {
+        addFile = "<leader>a";
+        toggleQuickMenu = "<leader>h";
+        navNext = "]]";
+        navPrev = "[[";
+      };
+    };
 
     mini = {
       enable = true;
@@ -147,6 +205,29 @@
     };
 
     bufferline.enable = true;
-    neo-tree.enable = true;
+    neo-tree = {
+      enable = true;
+      addBlankLineAtTop = true;
+      closeIfLastWindow = true;
+      enableDiagnostics = true;
+      enableGitStatus = true;
+      autoCleanAfterSessionRestore = true;
+      window.mappings = {
+        "e".__raw = "function() vim.api.nvim_exec('Neotree filesystem', true) end";
+        "b".__raw = "function() vim.api.nvim_exec('Neotree buffers', true) end";
+        "g".__raw = "function() vim.api.nvim_exec('Neotree git_status', true) end";
+      };
+      filesystem = {
+        followCurrentFile.enabled = true;
+        filteredItems = {
+          visible = true;
+          hideDotfiles = false;
+          hideByName = [
+            ".git"
+            ".node_modules"
+          ];
+        };
+      };
+    };
   };
 }
