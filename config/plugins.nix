@@ -159,34 +159,34 @@
     # indent-blankline.enable = true;
     # persistence.enable = true;
     #
-    # treesitter = {
-    #   enable = true;
-    #   ensureInstalled = [
-    #     "vimdoc"
-    #     "nix"
-    #     "lua"
-    #     "vim"
-    #     "javascript"
-    #     "typescript"
-    #     "c"
-    #     "regex"
-    #     "bash"
-    #     "markdown"
-    #     "markdown_inline"
-    #     "svelte"
-    #     "prisma"
-    #     "sql"
-    #     "typescript"
-    #     "tsx"
-    #     "regex"
-    #     "bash"
-    #     "rust"
-    #     "toml"
-    #     "kdl"
-    #   ];
-    #   indent = true;
-    #   nixvimInjections = true;
-    # };
+    treesitter = {
+      enable = true;
+      ensureInstalled = [
+        "vimdoc"
+        "nix"
+        "lua"
+        "vim"
+        "javascript"
+        "typescript"
+        "c"
+        "regex"
+        "bash"
+        "markdown"
+        "markdown_inline"
+        "svelte"
+        "prisma"
+        "sql"
+        "typescript"
+        "tsx"
+        "regex"
+        "bash"
+        "rust"
+        "toml"
+        "kdl"
+      ];
+      indent = true;
+      nixvimInjections = true;
+    };
     # treesitter-context.enable = true;
     # treesitter-textobjects.enable = true;
     # ts-autotag.enable = true;

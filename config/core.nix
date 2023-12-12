@@ -80,7 +80,56 @@
     ];
 
     extraPlugins = with pkgs.vimPlugins; [
+      # Rust
+      nvim-dap
+      crates-nvim
+      rust-tools-nvim
+      neotest-rust
+      neotest
+      # LazyVim
+      LazyVim
       lazy-nvim
+      bufferline-nvim
+      cmp-buffer
+      cmp-nvim-lsp
+      cmp-path
+      cmp_luasnip
+      conform-nvim
+      dashboard-nvim
+      dressing-nvim
+      flash-nvim
+      friendly-snippets
+      gitsigns-nvim
+      indent-blankline-nvim
+      clangd_extensions-nvim
+      lualine-nvim
+      neo-tree-nvim
+      oil-nvim
+      nvim-web-devicons
+      neoconf-nvim
+      neodev-nvim
+      noice-nvim
+      nui-nvim
+      nvim-cmp
+      nvim-lint
+      nvim-lspconfig
+      nvim-notify
+      nvim-spectre
+      nvim-treesitter
+      nvim-treesitter-context
+      nvim-treesitter-textobjects
+      nvim-ts-autotag
+      nvim-ts-context-commentstring
+      nvim-web-devicons
+      persistence-nvim
+      plenary-nvim
+      telescope-fzf-native-nvim
+      telescope-nvim
+      todo-comments-nvim
+      tokyonight-nvim
+      trouble-nvim
+      vim-illuminate
+      vim-startuptime
     ];
 
     extraConfigLua =
