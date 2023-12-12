@@ -79,7 +79,11 @@
       gnused
     ];
 
-    extraConfigLuaPost =
+    extraPlugins = with pkgs.vimPlugins; [
+      lazy-nvim
+    ];
+
+    extraConfigLua =
       let
         plugins = with pkgs.vimPlugins; [
           # Rust
@@ -90,6 +94,7 @@
           neotest
           # LazyVim
           LazyVim
+          lazy-nvim
           bufferline-nvim
           cmp-buffer
           cmp-nvim-lsp
