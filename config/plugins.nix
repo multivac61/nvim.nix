@@ -97,7 +97,7 @@
     lint.enable = true;
 
     which-key.enable = true;
-    dashboard.enable = true;
+    # dashboard.enable = true;
     # alpha = {
     #   enable = true;
     #   iconsEnabled = true;
@@ -271,6 +271,7 @@
     mini = {
       enable = true;
       modules = {
+        bufremove = { };
         pairs = { };
         comment = {
           options = {
@@ -321,7 +322,56 @@
       sticky = true;
     };
 
-    bufferline.enable = true;
+    bufferline = {
+      enable = true;
+
+      persistBufferSort = true;
+
+      # indicator.style = "underline";
+      # hover.enabled = true;
+
+      # button = "󰅙";
+      # button = "󰅚";
+      # modified.button = "󰀨";
+      # inactive.modified.button = "󰗖";
+      # offsets =
+      #   {
+      #     filetype = "neo-tree";
+      #     text = "Neo-tree";
+      #     highlight = "Directory";
+      #     text_align = "left";
+      #   };
+
+      separatorStyle = "slant";
+      closeIcon = "󰅚";
+      bufferCloseIcon = "󰅙";
+      modifiedIcon = "󰀨";
+      extraOptions = {
+
+        "close_command".__raw = ''function (n) require ("mini.bufremove").delete (n, false) end'';
+        "right_mouse_command".__raw = ''function (n) require ("mini.bufremove").delete (n, false) end'';
+        "diagnostics".__raw = "nvim_lsp";
+        "diagnostics_indicator".__raw = ''function(_, _, diag)
+            local icons = require("lazyvim.config").icons.diagnostics
+            local ret = (diag.error and icons.Error .. diag.error .. " " or "")
+            .. (diag.warning and icons.Warn .. diag.warning or "")
+            return vim.trim(ret)
+            end'';
+
+        "offsets".__raw = ''
+          {
+              {
+              filetype = "neo-tree",
+              text = "Neo-tree",
+              highlight = "Directory",
+              text_align = "left",
+              },
+          }
+        '';
+
+      };
+    };
+
     neo-tree = {
       enable = true;
       addBlankLineAtTop = true;

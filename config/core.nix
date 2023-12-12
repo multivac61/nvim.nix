@@ -76,7 +76,7 @@
       # overseer-nvim
       # plenary-nvim
       nvim-spectre
-      # dressing-nvim
+      dressing-nvim
       friendly-snippets
       lazygit-nvim
     ];
@@ -87,12 +87,9 @@
       lazygit
       gnused
     ];
-    extraConfigLuaPre = '' '';
-    # extraConfigLua = ''
-    #   require("dressing").setup({})
-    # '';
-    colorschemes.tokyonight = {
-      enable = true;
-    };
+    extraConfigLua = ''
+      require("dressing").setup({})
+    '';
+    colorschemes.tokyonight.enable = true;
   };
 }

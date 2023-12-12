@@ -724,5 +724,128 @@
       action = "<cmd>tablast<cr>";
       options.desc = "Previous Tab";
     }
+    # Reordering tabs
+    {
+      mode = "n";
+      key = "<leader>bp";
+      action = "<cmd>BufferLineTogglePin<cr>";
+      options.desc = "";
+    }
+    {
+      mode = "n";
+      key = "<leader>bP";
+      action = "<cmd>BufferLineGroupClose ungrouped<cr>";
+      options.desc = "";
+    }
+    {
+      mode = "n";
+      key = "<leader>bo";
+      action = "<cmd>BufferLineCloseOthers<cr>";
+      options.desc = "";
+    }
+    {
+      mode = "n";
+      key = "<leader>br";
+      action = "<cmd>BufferLineCloseRight<cr>";
+      options.desc = "";
+    }
+    {
+      mode = "n";
+      key = "<leader>bl";
+      action = "<cmd>BufferLineCloseLeft<cr>";
+      options.desc = "";
+    }
+
+    # Navigating tabs
+    # {
+    #   mode = "n";
+    #   key = "<S-h>";
+    #   action = "<cmd>BufferLineCycleNext<cr>";
+    #   options.desc = "";
+    # }
+    # {
+    #   mode = "n";
+    #   key = "<S-l>";
+    #   action = "<cmd>BufferLineCyclePrev<cr>";
+    #   options.desc = "";
+    # }
+    # {
+    #   mode = "n";
+    #   key = "[b";
+    #   action = "<cmd>BufferLineCycleNext<cr>";
+    #   options.desc = "";
+    # }
+    # {
+    #   mode = "n";
+    #   key = "]b";
+    #   action = "<cmd>BufferLineCyclePrev<cr>";
+    #   options.desc = "";
+    # }
+    # {
+    #   mode = "n";
+    #   key = "<A-1>";
+    #   action = "<cmd>BufferLineGoToBuffer 1<cr>";
+    #   options.desc = "";
+    # }
+    # {
+    #   mode = "n";
+    #   key = "<A-2>";
+    #   action = "<cmd>BufferLineGoToBuffer 2<cr>";
+    #   options.desc = "";
+    # }
+    # {
+    #   mode = "n";
+    #   key = "<A-3>";
+    #   action = "<cmd>BufferLineGoToBuffer 3<cr>";
+    #   options.desc = "";
+    # }
+    # {
+    #   mode = "n";
+    #   key = "<A-4>";
+    #   action = "<cmd>BufferLineGoToBuffer 4<cr>";
+    #   options.desc = "";
+    # }
+    # {
+    #   mode = "n";
+    #   key = "<A-5>";
+    #   action = "<cmd>BufferLineGoToBuffer 5<cr>";
+    #   options.desc = "";
+    # }
+    # {
+    #   mode = "n";
+    #   key = "<A-6>";
+    #   action = "<cmd>BufferLineGoToBuffer 6<cr>";
+    #   options.desc = "";
+    # }
+    # {
+    #   mode = "n";
+    #   key = "<A-7>";
+    #   action = "<cmd>BufferLineGoToBuffer 7<cr>";
+    #   options.desc = "";
+    # }
+    # {
+    #   mode = "n";
+    #   key = "<A-8>";
+    #   action = "<cmd>BufferLineGoToBuffer 8<cr>";
+    #   options.desc = "";
+    # }
+    # {
+    #   mode = "n";
+    #   key = "<A-9>";
+    #   action = "<cmd>BufferLineGoToBuffer 9<cr>";
+    #   options.desc = "";
+    # }
+    # {
+    #   mode = "n";
+    #   key = "<A-0>";
+    #   action = "<cmd>BufferLineGoToBuffer -1<cr>";
+    #   options.desc = "";
+    # }
+    {
+      mode = "n";
+      key = "<S-x>";
+      action = "<cmd>lua require('bufferline.commands').unpin_and_close()<cr>";
+      options.desc = "";
+    }
   ];
 }
